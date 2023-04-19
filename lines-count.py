@@ -4,7 +4,7 @@ import sys
 
 
 if len(sys.argv) != 2:
-    print(f'Usage: lines-counter.py <filename>')    
+    print(f'Usage: lines-counter.py <filename>')
 else:
     filename = sys.argv[1]
     with open(filename, 'r') as f:
