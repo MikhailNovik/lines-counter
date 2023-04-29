@@ -4,7 +4,8 @@ import os
 import sys
 
 if len(sys.argv) != 2:
-    print(f'Usage: lines-counter.py <filename>')
+    print(f'Usage: lines-counter.py <filename>', file=sys.stderr)
+
 else:
     filename = sys.argv[1]
     path_to_file = os.path.relpath(filename)
@@ -13,4 +14,4 @@ else:
             data = f.readlines()
             print(f'{filename}\t{len(data)}')
     else:
-        print(f'No such file <{filename}>')
+        print(f'No such file <{filename}>', file=sys.stderr)
