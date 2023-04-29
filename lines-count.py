@@ -9,9 +9,13 @@ if len(sys.argv) != 2:
 else:
     filename = sys.argv[1]
     path_to_file = os.path.relpath(filename)
-    if os.path.isfile(path_to_file):
+    
+    try:
         with open(path_to_file, 'r') as f:
             data = f.readlines()
             print(f'{filename}\t{len(data)}')
-    else:
-        print(f'No such file <{filename}>', file=sys.stderr)
+    
+    except FileNotFoundError:
+        print(f"File is requested but doesn't exist", file=sys.stderr)        
+    except PermissionError:
+        print(f'Trying to run an operation without the adequate access rights', file=sys.stderr)
