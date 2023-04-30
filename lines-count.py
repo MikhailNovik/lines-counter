@@ -10,14 +10,14 @@ else:
     path_to_file = os.path.relpath(filename)
     
     try:
-        fp = open(path_to_file, 'r')
+        f = open(path_to_file, 'r')
     except FileNotFoundError:
         print(f"File is requested but doesn't exist", file=sys.stderr)
     except PermissionError:
         print(f'Trying to run an operation without the adequate access rights', file=sys.stderr)
     
     else:
-        with fp:
+        with f:
             data = fp.readlines()
             print(f'{filename}\t{len(data)}')
 
