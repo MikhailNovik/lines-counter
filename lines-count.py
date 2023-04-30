@@ -18,6 +18,6 @@ else:
     
     else:
         with f:
-            data = fp.readlines()
+            data = f.readlines()
             print(f'{filename}\t{len(data)}')
 
