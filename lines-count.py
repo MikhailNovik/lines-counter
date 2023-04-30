@@ -20,4 +20,4 @@ else:
         with fp:
             data = fp.readlines()
             print(f'{filename}\t{len(data)}')
-            
+
